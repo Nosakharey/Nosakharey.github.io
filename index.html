@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Nosa Godwin Agbonze - Data Engineer and Analyst in Lagos. Google Cloud Certified Professional Data Engineer.">
+<title>Nosa Agbonze</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%20role%3D%22img%22%20aria-label%3D%22Nosa%20Agbonze%20logo%22%3E%20%20%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%228%22%20fill%3D%22%23131210%22/%3E%20%20%3Cpath%20d%3D%22M12%2048%20V16%20L30%2048%20L41%2016%20L52%2048%20M35.5%2032%20H46.5%22%20fill%3D%22none%22%20stroke%3D%22%23F3F0EA%22%20stroke-width%3D%223.2%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%20%20%3Ccircle%20cx%3D%2212%22%20cy%3D%2248%22%20r%3D%224%22%20fill%3D%22%23131210%22%20stroke%3D%22%23F3F0EA%22%20stroke-width%3D%222.6%22/%3E%20%20%3Ccircle%20cx%3D%2212%22%20cy%3D%2216%22%20r%3D%223.2%22%20fill%3D%22%23F3F0EA%22/%3E%20%20%3Ccircle%20cx%3D%2230%22%20cy%3D%2248%22%20r%3D%223.2%22%20fill%3D%22%23F3F0EA%22/%3E%20%20%3Ccircle%20cx%3D%2241%22%20cy%3D%2216%22%20r%3D%223.2%22%20fill%3D%22%23F3F0EA%22/%3E%20%20%3Ccircle%20cx%3D%2252%22%20cy%3D%2248%22%20r%3D%224.6%22%20fill%3D%22%23E6552F%22/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Portfolio Studio system: paper ground, ink text, one orange accent for the single main action. Single light theme by choice. */
+:root{
+  --primary:#131210;   /* ink */
+  --secondary:#716E68; /* muted text */
+  --tertiary:#E6552F;  /* the one interaction accent */
+  --neutral:#F3F0EA;   /* page paper */
+  --surface:#FFFFFF;   /* cards */
+  --on-primary:#FFFFFF;
+  --rule:#DDD8CE;      /* hairlines, warm to match paper */
+  --display:"Fraunces", Georgia, "Times New Roman", serif;
+  --body:"Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --r-sm:2px; --r-md:4px; --r-lg:8px;
+  --s1:8px; --s2:16px; --s3:32px;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--neutral);color:var(--primary);font-family:var(--body);font-size:0.98rem;line-height:1.65;margin:0;padding-inline:clamp(16px,5vw,48px);padding-block:0}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--primary);outline-offset:3px;border-radius:var(--r-sm)}
+.wrap{max-width:1080px;margin:0 auto}
+p{margin:0}
+.label{font-family:var(--mono);font-size:0.72rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--secondary)}
+
+/* top bar */
+.bar{padding-block:24px;display:flex;align-items:center;justify-content:space-between;gap:var(--s2);flex-wrap:wrap}
+.mark{display:inline-flex;align-items:center;gap:10px;font-family:var(--display);font-size:1.15rem;font-weight:500;text-decoration:none;letter-spacing:-0.01em}
+.logo{width:32px;height:32px;display:block;flex:none}
+.bar nav{display:flex;gap:20px;flex-wrap:wrap}
+.bar nav a{font-family:var(--mono);font-size:0.72rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--secondary);text-decoration:none}
+.bar nav a:hover{color:var(--primary)}
+
+/* hero */
+.hero{padding-block:56px 64px;display:grid;gap:var(--s3)}
+.hero-top{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:48px;align-items:center}
+.hero-text{display:grid;gap:var(--s3);min-width:0}
+.portrait{margin:0;display:grid;gap:16px;justify-items:center;min-width:0;width:100%;max-width:380px;justify-self:center}
+.portrait img{display:block;width:100%;height:auto;max-width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:50%;background:#E7E0D4;box-shadow:0 0 0 1px var(--rule)}
+.portrait figcaption{display:flex;justify-content:center;gap:8px 16px;flex-wrap:wrap}
+/* resume viewer */
+.viewer{border:0;padding:0;margin:auto;width:min(860px,100vw - 32px);max-height:calc(100dvh - 32px);border-radius:var(--r-lg);background:var(--neutral);color:var(--primary)}
+.viewer::backdrop{background:rgba(19,18,16,0.6)}
+.viewer-bar{position:sticky;top:0;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:12px 16px;background:var(--neutral);border-bottom:1px solid var(--rule)}
+.viewer-bar div{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.pages{display:grid;gap:16px;padding:16px}
+.pages img{display:block;width:100%;height:auto;max-width:100%;background:var(--surface);box-shadow:0 0 0 1px var(--rule)}
+h1{font-family:var(--display);font-weight:500;font-size:clamp(2.6rem,7.5vw,5rem);line-height:1.02;letter-spacing:-0.03em;margin:0;max-width:16ch;text-wrap:balance}
+.lede{font-size:1.1rem;color:var(--secondary);max-width:58ch}
+.lede strong{color:var(--primary);font-weight:500}
+.cta{display:flex;flex-wrap:wrap;align-items:center;gap:12px 28px}
+.btn-primary{display:inline-block;background:var(--tertiary);color:var(--on-primary);text-decoration:none;font-weight:500;border-radius:var(--r-md);padding:12px 20px}
+.btn-primary:hover{background:#cf4823}
+.textlink{text-decoration:underline;text-decoration-color:var(--rule);text-underline-offset:4px;text-decoration-thickness:1px}
+.textlink:hover{text-decoration-color:var(--primary)}
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;padding-top:var(--s2);border-top:1px solid var(--rule);font-family:var(--mono);font-size:0.72rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--secondary)}
+.flow b{font-weight:500;color:var(--primary)}
+
+/* sections */
+section{padding-block:72px;border-top:1px solid var(--rule)}
+.sec-head{display:grid;gap:var(--s1);margin-bottom:var(--s3)}
+h2{font-family:var(--display);font-weight:500;font-size:clamp(2rem,4.5vw,2.5rem);line-height:1.1;letter-spacing:-0.02em;margin:0;text-wrap:balance}
+h3{font-family:var(--display);font-weight:500;font-size:1.35rem;line-height:1.25;letter-spacing:-0.01em;margin:0;text-wrap:balance}
+
+/* cards */
+.card{background:var(--surface);border-radius:var(--r-lg);padding:24px;display:grid;gap:12px;align-content:start;min-width:0}
+.card p{color:var(--secondary)}
+.tags{font-family:var(--mono);font-size:0.72rem;letter-spacing:0.04em;color:var(--secondary)}
+.more{font-weight:500;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px;text-decoration-color:var(--rule)}
+.more:hover{text-decoration-color:var(--primary)}
+.links{display:flex;flex-wrap:wrap;gap:20px}
+
+/* featured */
+.feature{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:var(--s3);padding:32px}
+.feature h3{font-size:clamp(1.6rem,3.5vw,2.1rem);letter-spacing:-0.02em}
+.feature .main{display:grid;gap:var(--s2);align-content:start;min-width:0}
+.review{display:grid;gap:12px;align-content:start;min-width:0;border-left:1px solid var(--rule);padding-left:var(--s3)}
+.score{font-family:var(--display);font-size:3rem;line-height:1;letter-spacing:-0.03em;font-variant-numeric:tabular-nums}
+.crit{list-style:none;margin:0;padding:0;display:grid;font-size:0.9rem}
+.crit li{display:flex;justify-content:space-between;gap:12px;padding-block:6px;border-bottom:1px solid var(--rule)}
+.crit li span:last-child{font-family:var(--mono);font-size:0.8rem;font-variant-numeric:tabular-nums}
+.crit li.zero{color:var(--secondary)}
+blockquote{margin:0;font-family:var(--display);font-style:italic;font-size:1rem;line-height:1.5;color:var(--primary)}
+.cite{font-family:var(--mono);font-size:0.72rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--secondary)}
+
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s2);margin-top:var(--s2)}
+.fact{font-family:var(--mono);font-size:0.78rem;color:var(--primary)}
+
+/* track record */
+.table-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse}
+th{text-align:left;font-family:var(--mono);font-size:0.72rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--secondary);font-weight:400;padding:0 16px 12px 0;border-bottom:1px solid var(--primary)}
+td{vertical-align:top;padding:20px 16px 20px 0;border-bottom:1px solid var(--rule)}
+td.when{font-family:var(--mono);font-size:0.8rem;color:var(--secondary);white-space:nowrap;font-variant-numeric:tabular-nums}
+td .role{font-family:var(--display);font-size:1.15rem;font-weight:500;line-height:1.3;display:block}
+td .org{color:var(--secondary);font-size:0.9rem}
+td.what{color:var(--secondary);max-width:52ch}
+td.result{font-weight:500;white-space:nowrap}
+.kind{display:inline-block;margin-top:6px;font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--secondary);border:1px solid var(--rule);border-radius:var(--r-sm);padding:1px 6px}
+
+/* certs + tools */
+.certs{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s2)}
+.certs .id{font-family:var(--mono);font-size:0.75rem;color:var(--secondary);overflow-wrap:anywhere}
+.tools{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s3) var(--s2)}
+.tools div{display:grid;gap:6px;align-content:start;min-width:0;border-top:1px solid var(--primary);padding-top:12px}
+
+/* contact */
+.contact{display:grid;gap:24px}
+.contact p{max-width:56ch;color:var(--secondary);font-size:1.1rem}
+.email{display:flex;align-items:center;gap:12px 16px;flex-wrap:wrap}
+.email code{font-family:var(--display);font-size:clamp(1.4rem,4vw,2.25rem);letter-spacing:-0.02em;user-select:all;overflow-wrap:anywhere}
+.btn-ghost{font-family:var(--mono);font-size:0.72rem;letter-spacing:0.06em;text-transform:uppercase;background:transparent;color:var(--primary);border:1px solid var(--primary);border-radius:var(--r-md);padding:9px 14px;cursor:pointer}
+.btn-ghost:hover{background:var(--primary);color:var(--on-primary)}
+footer{border-top:1px solid var(--rule);padding-block:28px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+@media (max-width:860px){
+  .hero-top{grid-template-columns:minmax(0,1fr);gap:var(--s3)}
+  .portrait{order:-1;max-width:220px;justify-self:start;justify-items:start}
+  .portrait figcaption{justify-content:flex-start}
+  .feature{grid-template-columns:minmax(0,1fr);padding:24px}
+  .review{border-left:0;padding-left:0;border-top:1px solid var(--rule);padding-top:var(--s2)}
+  .tools{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:640px){
+  .hero{padding-block:40px 48px}
+  section{padding-block:56px}
+  .grid,.certs,.tools{grid-template-columns:minmax(0,1fr)}
+  thead{display:none}
+  table,tbody,tr,td{display:block;width:100%}
+  tr{padding-block:16px;border-bottom:1px solid var(--rule)}
+  td{border:0;padding:2px 0}
+  td.when{padding-bottom:6px}
+  td.what{padding-block:8px}
+  td.result{white-space:normal}
+  td.result::before{content:"Result: ";font-weight:400;color:var(--secondary)}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+  <header class="bar">
+    <a class="mark" href="#top"><svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="8" fill="#131210"/><path d="M12 48 V16 L30 48 L41 16 L52 48 M35.5 32 H46.5" fill="none" stroke="#F3F0EA" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="48" r="4" fill="#131210" stroke="#F3F0EA" stroke-width="2.6"/><circle cx="12" cy="16" r="3.2" fill="#F3F0EA"/><circle cx="30" cy="48" r="3.2" fill="#F3F0EA"/><circle cx="41" cy="16" r="3.2" fill="#F3F0EA"/><circle cx="52" cy="48" r="4.6" fill="#E6552F"/></svg><span>Nosa Agbonze</span></a>
+    <nav aria-label="Sections">
+      <a href="#work">Work</a>
+      <a href="#record">Track record</a>
+      <a href="#certs">Certifications</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <div class="hero">
+      <div class="hero-top">
+      <div class="hero-text">
+      <div class="label">Data Engineer &amp; Analyst · Lagos, Nigeria</div>
+      <h1>I build the pipelines behind the dashboards.</h1>
+      <p class="lede">I'm Nosa Godwin Agbonze, a <strong>Google Cloud Certified Professional Data Engineer</strong> and Mechanical Engineering graduate. I've been working hands-on with Python and data since 2022, moving data from where it lands to where decisions get made.</p>
+      <div class="cta">
+        <a class="btn-primary" href="#work">View my work</a>
+        <a class="textlink" href="resume.pdf" id="resumeLink">Resume</a>
+        <a class="textlink" href="https://github.com/Nosakharey" target="_blank" rel="noopener">GitHub</a>
+        <a class="textlink" href="https://linkedin.com/in/godwin-agbonze-884019294" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+      </div>
+      <figure class="portrait">
+        <img src="nosa.jpg" alt="Nosa Godwin Agbonze, smiling, in a navy polo shirt" width="600" height="600">
+        <figcaption><span class="label">● Available now</span></figcaption>
+      </figure>
+      </div>
+      <div class="flow" aria-label="How my pipelines are built">
+        <b>Source</b><span>→</span><b>Orchestrate</b><span>Airflow · Kestra · cron</span><span>→</span><b>Lake</b><span>GCS</span><span>→</span><b>Warehouse</b><span>BigQuery</span><span>→</span><b>Transform</b><span>dbt · SQL</span><span>→</span><b>Insight</b><span>Looker · Power BI</span>
+      </div>
+    </div>
+
+    <section id="work">
+      <div class="sec-head"><span class="label">Selected work · 5 projects, all on GitHub</span><h2>Projects</h2></div>
+
+      <article class="card feature">
+        <div class="main">
+          <span class="label">Featured · Data Engineering Zoomcamp capstone</span>
+          <h3>FIFA World Cup 2026 Prediction Pipeline</h3>
+          <p>An end-to-end pipeline on Google Cloud that combines international match results from 1872 to 2024 with current player statistics, trains 7 BigQuery ML models to predict the tournament winner, Golden Boot, awards and upsets, and publishes the results in a live two-page dashboard.</p>
+          <p class="tags">Terraform · Kestra · Docker · GCS · BigQuery · dbt · BigQuery ML · Looker Studio</p>
+          <div class="links">
+            <a class="more" href="https://github.com/Nosakharey/worldcup-2026-predictions" target="_blank" rel="noopener">Code ↗</a>
+            <a class="more" href="https://lookerstudio.google.com/reporting/27e8c29a-42af-4216-8d97-0dd16c9ed809" target="_blank" rel="noopener">Live dashboard ↗</a>
+          </div>
+        </div>
+        <aside class="review" aria-label="Peer review result">
+          <span class="label">Peer review · passed</span>
+          <div class="score">7 of 8</div>
+          <p style="color:var(--secondary);font-size:0.9rem">criteria at full marks</p>
+          <ul class="crit">
+            <li><span>Cloud + infrastructure as code</span><span>4/4</span></li>
+            <li><span>End-to-end orchestration</span><span>4/4</span></li>
+            <li><span>Partitioning &amp; clustering</span><span>4/4</span></li>
+            <li><span>dbt transformations</span><span>4/4</span></li>
+            <li><span>Dashboard</span><span>4/4</span></li>
+            <li><span>Reproducibility</span><span>4/4</span></li>
+            <li><span>Problem description</span><span>4/4</span></li>
+            <li class="zero"><span>Streaming (not attempted)</span><span>0/4</span></li>
+          </ul>
+          <blockquote>"Implementation of partitioning and clustering in the dbt configuration demonstrates a clear understanding of BigQuery performance and cost management."</blockquote>
+          <span class="cite">Peer reviewer, DataTalks.Club</span>
+        </aside>
+      </article>
+
+      <div class="grid">
+        <article class="card">
+          <span class="label">Data engineering</span>
+          <h3>GCS to BigQuery pipeline with Airflow</h3>
+          <p>Terraform provisions the bucket, dataset and table; an hourly Airflow DAG running in Docker uploads B2B marketplace data to Cloud Storage and loads it into BigQuery, replacing manual uploads.</p>
+          <p class="tags">Airflow · Docker · Terraform · BigQuery</p>
+          <a class="more" href="https://github.com/Nosakharey/gcs-airflow-bigquery-pipeline" target="_blank" rel="noopener">Code ↗</a>
+        </article>
+        <article class="card">
+          <span class="label">Analytics</span>
+          <h3>MSC Pharma sales analytics</h3>
+          <p>Six years of pharmacy sales (2,106 daily records, 8 drug categories) cleaned in Excel, queried in PostgreSQL and presented in Power BI.</p>
+          <p class="fact">Paracetamol = 49% of all units sold · peak months: January, October</p>
+          <p class="tags">Excel · PostgreSQL · Power BI</p>
+          <a class="more" href="https://github.com/Nosakharey/MSC-Pharma-Analytics" target="_blank" rel="noopener">Code ↗</a>
+        </article>
+        <article class="card">
+          <span class="label">Linux &amp; automation</span>
+          <h3>Bash ETL pipeline with cron</h3>
+          <p>Downloads a public survey dataset, transforms it with awk (handling commas inside quoted fields), loads it to a gold layer, and runs daily at midnight with errors logged for troubleshooting.</p>
+          <p class="tags">Bash · awk · cron · Git</p>
+          <a class="more" href="https://github.com/Nosakharey/cde_git-linux-assigment" target="_blank" rel="noopener">Code ↗</a>
+        </article>
+        <article class="card">
+          <span class="label">SQL</span>
+          <h3>Data engineering job market analysis</h3>
+          <p>Remote data engineer postings loaded into PostgreSQL and queried with joins, CTEs and aggregations to find the best-paid roles, the most in-demand skills, and the skills that balance both.</p>
+          <p class="tags">PostgreSQL · SQL · Git</p>
+          <a class="more" href="https://github.com/Nosakharey/Sql_project_job_data_ananalysis" target="_blank" rel="noopener">Code ↗</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="record">
+      <div class="sec-head"><span class="label">Work and training · most recent first</span><h2>Track record</h2></div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Period</th><th>Organisation</th><th>What I did</th><th>Result</th></tr></thead>
+          <tbody>
+            <tr>
+              <td class="when">Aug 2026 – now</td>
+              <td><span class="role">Data Engineering Bootcamp</span><span class="org">Core Data Engineers · remote</span><br><span class="kind">Training</span></td>
+              <td class="what">12-week live, instructor-led programme. Completed Python, SQL, Linux, data engineering fundamentals and data modelling (conceptual design and dbt).</td>
+              <td class="result">In progress</td>
+            </tr>
+            <tr>
+              <td class="when">Jan – Apr 2026</td>
+              <td><span class="role">Data Engineering Zoomcamp</span><span class="org">DataTalks.Club · remote</span><br><span class="kind">Training</span></td>
+              <td class="what">Completed the 2026 cohort and passed the peer-reviewed World Cup capstone above.</td>
+              <td class="result">Certified</td>
+            </tr>
+            <tr>
+              <td class="when">Oct – Nov 2025</td>
+              <td><span class="role">Graduate Readiness Program</span><span class="org">Phillips Outsourcing · Lagos</span><br><span class="kind">Training</span></td>
+              <td class="what">Selected for a 5-week workplace-readiness programme.</td>
+              <td class="result">Most Improved Candidate</td>
+            </tr>
+            <tr>
+              <td class="when">Jul 2024 – Aug 2025</td>
+              <td><span class="role">Intern Analyst</span><span class="org">KPMG Nigeria · Lagos</span><br><span class="kind">Work</span></td>
+              <td class="what">Collected, cleaned and validated data from client systems in energy, financial services and manufacturing using SQL and Excel; built Power BI and Excel dashboards for managers; automated repetitive data tests with ACL Analytics and SAP.</td>
+              <td class="result">Audit-ready data</td>
+            </tr>
+            <tr>
+              <td class="when">Jan – May 2024</td>
+              <td><span class="role">Teaching Assistant (Data Support)</span><span class="org">University of Benin · Benin City</span><br><span class="kind">Work</span></td>
+              <td class="what">Consolidated and cleaned student results data, checked for missing and duplicate records, and built PivotTable summaries of pass and fail rates by course.</td>
+              <td class="result">Cleaner records</td>
+            </tr>
+            <tr>
+              <td class="when">Jan – Jul 2022</td>
+              <td><span class="role">Facility Maintenance Intern (Data and Operations Analysis)</span><span class="org">NNPC E&amp;P Limited · Oredo Flow Station</span><br><span class="kind">Work</span></td>
+              <td class="what">Analysed generator performance logs with Python to model failure rates and support predictive maintenance; digitised paper maintenance records into structured databases.</td>
+              <td class="result">Python on field data</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="certs">
+      <div class="sec-head"><span class="label">Credentials</span><h2>Certifications</h2></div>
+      <ul class="certs">
+        <li class="card"><span class="label">Sep 2026 · valid to Sep 2028</span><h3>Professional Data Engineer</h3><p>Google Cloud</p><span class="id">ID 72beb9a869a54b70b47cb5fd6f27c9f7</span></li>
+        <li class="card"><span class="label">Jan 2026</span><h3>Apache Airflow 3 Fundamentals</h3><p>Astronomer</p><a class="more" href="https://www.credly.com/go/HT2RopRI" target="_blank" rel="noopener">Verify on Credly ↗</a></li>
+        <li class="card"><span class="label">Apr 2026</span><h3>Data Engineering Zoomcamp</h3><p>DataTalks.Club</p><span class="id">Certificate DAE1C5</span></li>
+        <li class="card"><span class="label">Nov 2025</span><h3>Graduate Member</h3><p>Nigerian Society of Engineers</p><span class="id">No. G86796</span></li>
+      </ul>
+    </section>
+
+    <section id="tools">
+      <div class="sec-head"><span class="label">What I've shipped with</span><h2>Tools</h2></div>
+      <div class="tools">
+        <div><span class="label">Languages</span><p>Python, SQL, Bash, HCL</p></div>
+        <div><span class="label">Cloud &amp; infrastructure</span><p>Google Cloud, BigQuery, Cloud Storage, Terraform, Docker, Linux</p></div>
+        <div><span class="label">Orchestration</span><p>Apache Airflow, Kestra, cron</p></div>
+        <div><span class="label">Modelling &amp; databases</span><p>dbt, PostgreSQL, MySQL, BigQuery ML</p></div>
+        <div><span class="label">Analytics</span><p>Power BI (DAX), Looker Studio, Excel, Pandas</p></div>
+        <div><span class="label">Engineering</span><p>B.Eng Mechanical, AutoCAD, SolidWorks, P&amp;IDs</p></div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="sec-head"><span class="label">Open to data engineering &amp; analytics roles</span><h2>Get in touch</h2></div>
+      <div class="contact">
+        <p>I'm available immediately for roles in Lagos or remote. Email is the fastest way to reach me.</p>
+        <div class="email"><code id="mail">godwinnosa53@gmail.com</code><button class="btn-ghost" id="copyBtn" type="button">Copy email</button></div>
+        <div class="links">
+          <a class="more" href="https://github.com/Nosakharey" target="_blank" rel="noopener">GitHub ↗</a>
+          <a class="more" href="https://linkedin.com/in/godwin-agbonze-884019294" target="_blank" rel="noopener">LinkedIn ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><span class="mark" style="font-size:1rem"><svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="8" fill="#131210"/><path d="M12 48 V16 L30 48 L41 16 L52 48 M35.5 32 H46.5" fill="none" stroke="#F3F0EA" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="48" r="4" fill="#131210" stroke="#F3F0EA" stroke-width="2.6"/><circle cx="12" cy="16" r="3.2" fill="#F3F0EA"/><circle cx="30" cy="48" r="3.2" fill="#F3F0EA"/><circle cx="41" cy="16" r="3.2" fill="#F3F0EA"/><circle cx="52" cy="48" r="4.6" fill="#E6552F"/></svg><span class="label">© 2026 Nosa Godwin Agbonze</span></span><span class="label">B.Eng Mechanical Engineering · University of Benin</span></footer>
+</div>
+
+<dialog class="viewer" id="resumeViewer" aria-label="Resume">
+  <div class="viewer-bar">
+    <span class="label">Resume · Nosa Godwin Agbonze</span>
+    <div><a class="more" href="resume.pdf" target="_blank" rel="noopener">Open PDF ↗</a><button class="btn-ghost" id="closeViewer" type="button">Close</button></div>
+  </div>
+  <div class="pages">
+    <img src="resume_p-1.jpg" alt="Resume page 1" width="910" height="1287" loading="lazy">
+    <img src="resume_p-2.jpg" alt="Resume page 2" width="910" height="1287" loading="lazy">
+  </div>
+</dialog>
+
+<script>
+(function(){
+  var dlg=document.getElementById('resumeViewer');
+  document.getElementById('resumeLink').addEventListener('click',function(e){if(dlg.showModal){e.preventDefault();dlg.showModal();}});
+  document.getElementById('closeViewer').addEventListener('click',function(){dlg.close();});
+  dlg.addEventListener('click',function(e){if(e.target===dlg)dlg.close();});
+  var btn=document.getElementById('copyBtn'), mail=document.getElementById('mail');
+  btn.addEventListener('click',function(){
+    var text=mail.textContent;
+    function selectIt(){var r=document.createRange();r.selectNodeContents(mail);var s=window.getSelection();s.removeAllRanges();s.addRange(r);btn.textContent='Selected, press Ctrl+C';}
+    try{
+      navigator.clipboard.writeText(text).then(function(){btn.textContent='Copied';setTimeout(function(){btn.textContent='Copy email';},2000);},selectIt);
+    }catch(e){selectIt();}
+  });
+})();
+</script>
+
+</body>
+</html>
