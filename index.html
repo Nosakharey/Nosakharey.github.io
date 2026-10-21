@@ -96,6 +96,9 @@ blockquote{margin:0;font-family:var(--display);font-style:italic;font-size:1rem;
 .cite{font-family:var(--mono);font-size:0.72rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--secondary)}
 
 .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s2);margin-top:var(--s2)}
+.card.wide{grid-column:1 / -1}
+.stats{display:flex;flex-wrap:wrap;gap:8px 24px;font-family:var(--mono);font-size:0.78rem}
+.stats b{font-family:var(--display);font-size:1.4rem;font-weight:500;display:block;letter-spacing:-0.02em}
 .fact{font-family:var(--mono);font-size:0.78rem;color:var(--primary)}
 
 /* track record */
@@ -188,7 +191,7 @@ footer{border-top:1px solid var(--rule);padding-block:28px;display:flex;justify-
     </div>
 
     <section id="work">
-      <div class="sec-head"><span class="label">Selected work · 5 projects, all on GitHub</span><h2>Projects</h2></div>
+      <div class="sec-head"><span class="label">Selected work · 6 projects, all on GitHub</span><h2>Projects</h2></div>
 
       <article class="card feature">
         <div class="main">
@@ -221,6 +224,15 @@ footer{border-top:1px solid var(--rule);padding-block:28px;display:flex;justify-
       </article>
 
       <div class="grid">
+        <article class="card wide">
+          <span class="label">Analytics engineering · Databricks</span>
+          <h3>Marketing data platform: Facebook and Snapchat Ads</h3>
+          <p>Raw ad exports from two platforms modelled with dbt on Databricks (Unity Catalog) through staging, intermediate and mart layers into one fact table at ad, day and country grain, with spend converted to USD using monthly ECB rates. Dev, CI and production environments are separate, production runs as a service principal, and GitHub Actions tests every pull request and deploys on merge, with Elementary monitoring data quality.</p>
+          <div class="stats"><span><b>57</b>dbt tests</span><span><b>99</b>production build steps passed</span><span><b>92,300</b>Facebook stat rows profiled</span><span><b>3</b>environments</span></div>
+          <p class="fact">Found that 26% of Facebook click values were missing and 304 Snapchat ads pointed to ad groups absent from the export; kept missing clicks as NULL, not 0, and flagged the orphans with a warning test.</p>
+          <p class="tags">Databricks · dbt · Elementary · GitHub Actions · Unity Catalog · uv</p>
+          <a class="more" href="https://github.com/Nosakharey/marketting_data_platform" target="_blank" rel="noopener">Code ↗</a>
+        </article>
         <article class="card">
           <span class="label">Data engineering</span>
           <h3>GCS to BigQuery pipeline with Airflow</h3>
@@ -290,7 +302,7 @@ footer{border-top:1px solid var(--rule);padding-block:28px;display:flex;justify-
               <td class="result">Cleaner records</td>
             </tr>
             <tr>
-              <td class="when">Jan – Jul 2022</td>
+              <td class="when">Jan – Dec 2022</td>
               <td><span class="role">Facility Maintenance Intern (Data and Operations Analysis)</span><span class="org">NNPC E&amp;P Limited · Oredo Flow Station</span><br><span class="kind">Work</span></td>
               <td class="what">Analysed generator performance logs with Python to model failure rates and support predictive maintenance; digitised paper maintenance records into structured databases.</td>
               <td class="result">Python on field data</td>
@@ -315,8 +327,8 @@ footer{border-top:1px solid var(--rule);padding-block:28px;display:flex;justify-
       <div class="tools">
         <div><span class="label">Languages</span><p>Python, SQL, Bash, HCL</p></div>
         <div><span class="label">Cloud &amp; infrastructure</span><p>Google Cloud, BigQuery, Cloud Storage, Terraform, Docker, Linux</p></div>
-        <div><span class="label">Orchestration</span><p>Apache Airflow, Kestra, cron</p></div>
-        <div><span class="label">Modelling &amp; databases</span><p>dbt, PostgreSQL, MySQL, BigQuery ML</p></div>
+        <div><span class="label">Orchestration</span><p>Apache Airflow, Kestra, cron, GitHub Actions</p></div>
+        <div><span class="label">Modelling &amp; databases</span><p>dbt, Databricks, PostgreSQL, MySQL, BigQuery ML</p></div>
         <div><span class="label">Analytics</span><p>Power BI (DAX), Looker Studio, Excel, Pandas</p></div>
         <div><span class="label">Engineering</span><p>B.Eng Mechanical, AutoCAD, SolidWorks, P&amp;IDs</p></div>
       </div>
