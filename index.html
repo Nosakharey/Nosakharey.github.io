@@ -90,13 +90,15 @@ h3{font-family:var(--display);font-weight:500;font-size:1.35rem;line-height:1.25
 .score{font-family:var(--display);font-size:3rem;line-height:1;letter-spacing:-0.03em;font-variant-numeric:tabular-nums}
 .crit{list-style:none;margin:0;padding:0;display:grid;font-size:0.9rem}
 .crit li{display:flex;justify-content:space-between;gap:12px;padding-block:6px;border-bottom:1px solid var(--rule)}
-.crit li span:last-child{font-family:var(--mono);font-size:0.8rem;font-variant-numeric:tabular-nums}
+.crit li span:first-child{min-width:0}
+.crit li span:last-child{font-family:var(--mono);font-size:0.8rem;font-variant-numeric:tabular-nums;white-space:nowrap;text-align:right;flex:none}
 .crit li.zero{color:var(--secondary)}
 blockquote{margin:0;font-family:var(--display);font-style:italic;font-size:1rem;line-height:1.5;color:var(--primary)}
 .cite{font-family:var(--mono);font-size:0.72rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--secondary)}
 
 .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s2);margin-top:var(--s2)}
-.card.wide{grid-column:1 / -1}
+.feature.second{margin-top:var(--s2)}
+.solved{display:grid;gap:8px}
 .stats{display:flex;flex-wrap:wrap;gap:8px 24px;font-family:var(--mono);font-size:0.78rem}
 .stats b{font-family:var(--display);font-size:1.4rem;font-weight:500;display:block;letter-spacing:-0.02em}
 .fact{font-family:var(--mono);font-size:0.78rem;color:var(--primary)}
@@ -198,6 +200,15 @@ footer{border-top:1px solid var(--rule);padding-block:28px;display:flex;justify-
           <span class="label">Featured · Data Engineering Zoomcamp capstone</span>
           <h3>FIFA World Cup 2026 Prediction Pipeline</h3>
           <p>An end-to-end pipeline on Google Cloud that combines international match results from 1872 to 2024 with current player statistics, trains 7 BigQuery ML models to predict the tournament winner, Golden Boot, awards and upsets, and publishes the results in a live two-page dashboard.</p>
+          <div class="solved">
+            <span class="label">Data problems I solved</span>
+            <ul class="crit">
+              <li><span>Same players listed across several leagues</span><span>surrogate keys</span></li>
+              <li><span>Team names spelled differently by source</span><span>dbt macro</span></li>
+              <li><span>Key players missing outside Europe</span><span>seed file</span></li>
+              <li><span>Query cost on large tables</span><span>partitioning</span></li>
+            </ul>
+          </div>
           <p class="tags">Terraform · Kestra · Docker · GCS · BigQuery · dbt · BigQuery ML · Looker Studio</p>
           <div class="links">
             <a class="more" href="https://github.com/Nosakharey/worldcup-2026-predictions" target="_blank" rel="noopener">Code ↗</a>
@@ -223,16 +234,42 @@ footer{border-top:1px solid var(--rule);padding-block:28px;display:flex;justify-
         </aside>
       </article>
 
-      <div class="grid">
-        <article class="card wide">
-          <span class="label">Analytics engineering · Databricks</span>
-          <h3>Marketing data platform: Facebook and Snapchat Ads</h3>
-          <p>Raw ad exports from two platforms modelled with dbt on Databricks (Unity Catalog) through staging, intermediate and mart layers into one fact table at ad, day and country grain, with spend converted to USD using monthly ECB rates. Dev, CI and production environments are separate, production runs as a service principal, and GitHub Actions tests every pull request and deploys on merge, with Elementary monitoring data quality.</p>
-          <div class="stats"><span><b>57</b>dbt tests</span><span><b>99</b>production build steps passed</span><span><b>92,300</b>Facebook stat rows profiled</span><span><b>3</b>environments</span></div>
-          <p class="fact">Found that 26% of Facebook click values were missing and 304 Snapchat ads pointed to ad groups absent from the export; kept missing clicks as NULL, not 0, and flagged the orphans with a warning test.</p>
+      <article class="card feature second">
+        <div class="main">
+          <span class="label">Featured · Analytics engineering on Databricks</span>
+          <h3>Marketing Data Platform: Facebook and Snapchat Ads</h3>
+          <p>Raw ad exports from two platforms modelled with dbt on Databricks (Unity Catalog) through staging, intermediate and mart layers into one fact table at ad, day and country grain, with spend converted to USD using monthly ECB exchange rates. Separate dev, CI and production environments, production running as a service principal, and GitHub Actions that test every pull request and deploy on merge.</p>
+          <div class="solved">
+            <span class="label">Data problems I found</span>
+            <ul class="crit">
+              <li><span>Facebook click values missing</span><span>26% of rows</span></li>
+              <li><span>Snapchat ads with missing ad groups</span><span>304 ads</span></li>
+              <li><span>Missing values stored as text</span><span>cast to NULL</span></li>
+            </ul>
+          </div>
           <p class="tags">Databricks · dbt · Elementary · GitHub Actions · Unity Catalog · uv</p>
-          <a class="more" href="https://github.com/Nosakharey/marketting_data_platform" target="_blank" rel="noopener">Code ↗</a>
-        </article>
+          <div class="links">
+            <a class="more" href="https://github.com/Nosakharey/marketting_data_platform" target="_blank" rel="noopener">Code ↗</a>
+          </div>
+        </div>
+        <aside class="review" aria-label="Quality and delivery">
+          <span class="label">Production build · passed</span>
+          <div class="score">99 / 0</div>
+          <p style="color:var(--secondary);font-size:0.9rem">steps passed / errors</p>
+          <ul class="crit">
+            <li><span>dbt tests</span><span>57</span></li>
+            <li><span>Tests passing</span><span>56 + 1 warning</span></li>
+            <li><span>Facebook stat rows profiled</span><span>92,300</span></li>
+            <li><span>Environments</span><span>dev · ci · prod</span></li>
+            <li><span>Monitoring</span><span>Elementary</span></li>
+            <li><span>Deployment</span><span>GitHub Actions</span></li>
+          </ul>
+          <blockquote>"Missing clicks were kept as NULL, not 0, because the source never defines what missing means."</blockquote>
+          <span class="cite">Design decision, from the project README</span>
+        </aside>
+      </article>
+
+      <div class="grid">
         <article class="card">
           <span class="label">Data engineering</span>
           <h3>GCS to BigQuery pipeline with Airflow</h3>
